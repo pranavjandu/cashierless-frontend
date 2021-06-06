@@ -1,7 +1,10 @@
+import "../styles.css";
+import Base from "./Base";
+
 export default function Home() {
-    return (
-        <div>
-            <h1>Hello world</h1>
-        </div>
-    )
+  return (
+    <Base title="homepage">
+      <div className="row"></div>
+    </Base>
+  );
 }
