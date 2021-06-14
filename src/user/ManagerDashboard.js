@@ -10,16 +10,11 @@ const ManagerDashboard = () => {
   const adminLeftSide = () => {
     return (
       <div className="card">
-        <h4 className="card-header bg-dark text-white">Admin Navigation</h4>
+        <h4 className="card-header bg-dark text-white">Manager Navigation</h4>
         <ul className="list-group">
           <li className="list-group-item">
             <Link to="/manager/create/category" className="nav-link">
               Create Categories
-            </Link>
-          </li>
-          <li className="list-group-item">
-            <Link to="/manager/categories" className="nav-link">
-              Manage Categories
             </Link>
           </li>
           <li className="list-group-item">
@@ -45,7 +40,7 @@ const ManagerDashboard = () => {
   const adminRightSide = () => {
     return (
       <div className="card mb-4">
-        <h4 className="card-header">Admin Information</h4>
+        <h4 className="card-header">Manager Information</h4>
         <ul className="list-group">
           <li className="list-group-item">
             <span className="badge bg-success mr-2">Name:</span> {name}
