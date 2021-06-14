@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { signout, isAuthenticated } from "../auth/Index";
 
@@ -30,8 +30,8 @@ const Navbar = ({ history }) => {
         </li>
         <li className="nav-item">
           <Link
-            style={currentTab(history, "/admin/dashboard")}
-            to="/admin/dashboard"
+            style={currentTab(history, "/manager/dashboard")}
+            to="/manager/dashboard"
             className="nav-link"
           >
             Manager Dashboard
