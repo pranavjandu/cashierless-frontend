@@ -6,8 +6,9 @@ import SignIn from "./user/SignIn";
 import SignUp from "./user/SignUp";
 import ManagerRoute from "./auth/ManagerRoutes";
 import PrivateRoute from "./auth/PrivateRoutes";
-import GuardRoute from "./auth/GuardRoutes";
+//import GuardRoute from "./auth/GuardRoutes";
 import AddCategory from "./admin/AddCategory";
+import AddProduct from "./admin/AddProduct";
 import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
 
@@ -29,6 +30,12 @@ const Routes = () => {
           exact
           component={AddCategory}
         />
+        <ManagerRoute
+          path="/manager/create/product"
+          exact
+          component={AddProduct}
+        />
+
         <Route component={NotFound}></Route>
       </Switch>
     </BrowserRouter>
