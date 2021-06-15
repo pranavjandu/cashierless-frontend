@@ -12,6 +12,7 @@ import AddProduct from "./admin/AddProduct";
 import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
 import ManageProducts from "./admin/ManageProducts";
+import UpdateProduct from "./admin/UpdateProduct";
 
 const Routes = () => {
   return (
@@ -40,6 +41,11 @@ const Routes = () => {
           path="/manager/products"
           exact
           component={ManageProducts}
+        />
+        <ManagerRoute
+          path="/manager/product/update/:productId"
+          exact
+          component={UpdateProduct}
         />
 
         <Route component={NotFound}></Route>
