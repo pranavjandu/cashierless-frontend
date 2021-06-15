@@ -19,24 +19,29 @@ const Navbar = ({ history }) => {
             Home
           </Link>
         </li>
-        <li className="nav-item">
-          <Link
-            style={currentTab(history, "/user/dashboard")}
-            to="/user/dashboard"
-            className="nav-link"
-          >
-            Dashboard
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link
-            style={currentTab(history, "/manager/dashboard")}
-            to="/manager/dashboard"
-            className="nav-link"
-          >
-            Manager Dashboard
-          </Link>
-        </li>
+        {isAuthenticated() && isAuthenticated().user.role === 0 && (
+          <li className="nav-item">
+            <Link
+              style={currentTab(history, "/user/dashboard")}
+              to="/user/dashboard"
+              className="nav-link"
+            >
+              Dashboard
+            </Link>
+          </li>
+        )}
+        {isAuthenticated() && isAuthenticated().user.role === 0 && (
+          <li className="nav-item">
+            <Link
+              style={currentTab(history, "/manager/dashboard")}
+              to="/manager/dashboard"
+              className="nav-link"
+            >
+              Manager Dashboard
+            </Link>
+          </li>
+        )}
+
         <li className="nav-item">
           <Link
             style={currentTab(history, "/scanner")}
