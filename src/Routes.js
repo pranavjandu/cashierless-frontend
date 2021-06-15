@@ -21,7 +21,7 @@ const Routes = () => {
         <Route path="/" exact component={Home}></Route>
         <Route path="/signin" exact component={SignIn}></Route>
         <Route path="/signup" exact component={SignUp}></Route>
-        <PrivateRoute path="/user/dashoard" exact component={UserDashboard} />
+        <PrivateRoute path="/user/dashboard" exact component={UserDashboard} />
         <ManagerRoute
           path="/manager/dashboard"
           exact

@@ -21,8 +21,8 @@ const Navbar = ({ history }) => {
         </li>
         <li className="nav-item">
           <Link
-            style={currentTab(history, "/dashboard")}
-            to="/dashboard"
+            style={currentTab(history, "/user/dashboard")}
+            to="/user/dashboard"
             className="nav-link"
           >
             Dashboard
