@@ -13,6 +13,7 @@ import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
+import Cart from "./core/Cart";
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
         <Route path="/signin" exact component={SignIn}></Route>
         <Route path="/signup" exact component={SignUp}></Route>
         <PrivateRoute path="/user/dashboard" exact component={UserDashboard} />
+        <PrivateRoute path="/cart" exact component={Cart} />
         <ManagerRoute
           path="/manager/dashboard"
           exact

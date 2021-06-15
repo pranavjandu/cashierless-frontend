@@ -30,7 +30,7 @@ const Navbar = ({ history }) => {
             </Link>
           </li>
         )}
-        {isAuthenticated() && isAuthenticated().user.role === 0 && (
+        {isAuthenticated() && isAuthenticated().user.role === 2 && (
           <li className="nav-item">
             <Link
               style={currentTab(history, "/manager/dashboard")}
@@ -51,6 +51,17 @@ const Navbar = ({ history }) => {
             Scanner
           </Link>
         </li>
+        {isAuthenticated() && isAuthenticated().user.role === 0 && (
+          <li className="nav-item">
+            <Link
+              style={currentTab(history, "/cart")}
+              to="/cart"
+              className="nav-link"
+            >
+              Cart
+            </Link>
+          </li>
+        )}
         {!isAuthenticated() && (
           <Fragment>
             <li className="nav-item">

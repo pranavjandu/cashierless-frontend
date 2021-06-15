@@ -28,3 +28,12 @@ export const removeItemFromCart = (productId) => {
   }
   return cart;
 };
+
+export const loadCart = () => {
+  if (typeof window !== undefined) {
+    if (localStorage.getItem("cart")) {
+      return JSON.parse(localStorage.getItem("cart"));
+    }
+    return [];
+  }
+};
