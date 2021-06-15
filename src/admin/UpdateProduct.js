@@ -46,16 +46,20 @@ const UpdateProduct = ({ match }) => {
         setValues({ ...values, error: data.error });
       } else {
         preloadCategories();
-        setValues({
-          ...values,
-          name: data.name,
-          description: data.description,
-          price: data.price,
-          category: data.category._id,
-          stock: data.stock,
-          formData: new FormData(),
-        });
+        setValuesFunction(data);
       }
+    });
+  };
+
+  const setValuesFunction = (data) => {
+    setValues({
+      ...values,
+      error: "something",
+      name: data.name,
+      description: data.description,
+      price: data.price,
+      category: data.category._id,
+      stock: data.stock,
     });
   };
 
@@ -121,6 +125,22 @@ const UpdateProduct = ({ match }) => {
     }
   };
 
+  const getOption = (cate, index) => {
+    if (cate._id === values.category) {
+      return (
+        <option selected key={index} value={cate._id}>
+          {cate.name}
+        </option>
+      );
+    } else {
+      return (
+        <option key={index} value={cate._id}>
+          {cate.name}
+        </option>
+      );
+    }
+  };
+
   const updateProductForm = () => (
     <form>
       <span>Photo</span>
@@ -170,11 +190,7 @@ const UpdateProduct = ({ match }) => {
         >
           <option>Select Category</option>
           {categories &&
-            categories.map((cate, index) => (
-              <option key={index} value={cate._id}>
-                {cate.name}
-              </option>
-            ))}
+            categories.map((cate, index) => getOption(cate, index))}
         </select>
       </div>
       <div className="form-group mt-2">
