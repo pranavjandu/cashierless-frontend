@@ -11,6 +11,7 @@ import AddCategory from "./admin/AddCategory";
 import AddProduct from "./admin/AddProduct";
 import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
+import ManageProducts from "./admin/ManageProducts";
 
 const Routes = () => {
   return (
@@ -34,6 +35,11 @@ const Routes = () => {
           path="/manager/create/product"
           exact
           component={AddProduct}
+        />
+        <ManagerRoute
+          path="/manager/products"
+          exact
+          component={ManageProducts}
         />
 
         <Route component={NotFound}></Route>
