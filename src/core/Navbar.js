@@ -47,6 +47,17 @@ const Navbar = ({ history }) => {
               </Link>
             </li>
           )}
+          {isAuthenticated() && isAuthenticated().user.role === 1 && (
+            <li className="nav-item">
+              <Link
+                style={currentTab(history, "/guard/dashboard")}
+                to="/guard/dashboard"
+                className="nav-link"
+              >
+                Guard Dashboard
+              </Link>
+            </li>
+          )}
           {isAuthenticated() && isAuthenticated().user.role === 2 && (
             <li className="nav-item">
               <Link
@@ -55,17 +66,6 @@ const Navbar = ({ history }) => {
                 className="nav-link"
               >
                 Manager Dashboard
-              </Link>
-            </li>
-          )}
-          {isAuthenticated() && isAuthenticated().user.role === 0 && (
-            <li className="nav-item">
-              <Link
-                style={currentTab(history, "/scanner")}
-                to="/scanner"
-                className="nav-link"
-              >
-                Scanner
               </Link>
             </li>
           )}
