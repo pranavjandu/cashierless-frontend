@@ -96,7 +96,7 @@ const AddProduct = () => {
 
   const createProductForm = () => (
     <form>
-      <span>Photo</span>
+      <span>Select Photo</span>
       <div className="form-group">
         <label className="btn btn-block">
           <input
@@ -141,7 +141,7 @@ const AddProduct = () => {
           className="form-control"
           placeholder="Category"
         >
-          <option disabled>Select Category</option>
+          <option>Select Category</option>
           {categories &&
             categories.map((cate, index) => (
               <option key={index} value={cate._id}>
@@ -163,7 +163,7 @@ const AddProduct = () => {
       <button
         type="submit"
         onClick={onSubmit}
-        className="btn btn-outline-success mb-3 mt-2"
+        className="btn btn-success mb-3 mt-2"
       >
         Create Product
       </button>
@@ -176,7 +176,10 @@ const AddProduct = () => {
       description="Welcome to product creation section"
       className="container bg-info p-4"
     >
-      <Link to="/manager/dashboard" className="btn btn-md bg-info mb-3">
+      <Link
+        to="/manager/dashboard"
+        className="btn btn-md bg-warning mb-3 text-white"
+      >
         Manager Home
       </Link>
       <div className="row rounded">
