@@ -40,13 +40,15 @@ const ManagerDashboard = () => {
   const adminRightSide = () => {
     return (
       <div className="card mb-4">
-        <h4 className="card-header">Manager Information</h4>
+        <h4 className="card-header bg-dark text-white">Manager Information</h4>
         <ul className="list-group">
-          <li className="list-group-item">
-            <span className="badge bg-success mr-2">Name:</span> {name}
+          <li className="list-group-item text-dark">
+            <span className="badge bg-success mr-2 text-white">Name:</span>{" "}
+            {name}
           </li>
-          <li className="list-group-item">
-            <span className="badge bg-success mr-2">Email:</span> {email}
+          <li className="list-group-item text-dark">
+            <span className="badge bg-success mr-2 text-white">Email:</span>{" "}
+            {email}
           </li>
 
           <li className="list-group-item">

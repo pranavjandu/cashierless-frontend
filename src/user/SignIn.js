@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { signin, authenticate, isAuthenticated } from "../auth/Index";
 
 const SignIn = () => {
@@ -121,7 +121,7 @@ const SignIn = () => {
   };
 
   return (
-    <Base title="signin">
+    <Base title="Sign-in" description="">
       {signInForm()}
       {performRedirect()}
     </Base>

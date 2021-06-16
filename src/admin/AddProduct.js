@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
@@ -94,7 +96,7 @@ const AddProduct = () => {
 
   const createProductForm = () => (
     <form>
-      <span>Photo</span>
+      <span>Select Photo</span>
       <div className="form-group">
         <label className="btn btn-block">
           <input
@@ -109,7 +111,7 @@ const AddProduct = () => {
       <div className="form-group mt-2">
         <input
           onChange={handleChange("name")}
-          name="photo"
+          name="name"
           className="form-control"
           placeholder="Name"
           value={name}
@@ -118,7 +120,7 @@ const AddProduct = () => {
       <div className="form-group mt-2">
         <textarea
           onChange={handleChange("description")}
-          name="photo"
+          name="description"
           className="form-control"
           placeholder="Description"
           value={description}
@@ -139,7 +141,7 @@ const AddProduct = () => {
           className="form-control"
           placeholder="Category"
         >
-          <option disabled>Select Category</option>
+          <option>Select Category</option>
           {categories &&
             categories.map((cate, index) => (
               <option key={index} value={cate._id}>
@@ -161,7 +163,7 @@ const AddProduct = () => {
       <button
         type="submit"
         onClick={onSubmit}
-        className="btn btn-outline-success mb-3 mt-2"
+        className="btn btn-success mb-3 mt-2"
       >
         Create Product
       </button>
@@ -174,7 +176,10 @@ const AddProduct = () => {
       description="Welcome to product creation section"
       className="container bg-info p-4"
     >
-      <Link to="/manager/dashboard" className="btn btn-md bg-info mb-3">
+      <Link
+        to="/manager/dashboard"
+        className="btn btn-md bg-warning mb-3 text-white"
+      >
         Manager Home
       </Link>
       <div className="row rounded">

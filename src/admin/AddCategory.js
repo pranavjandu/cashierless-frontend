@@ -70,7 +70,7 @@ const AddCategory = () => {
           required
           placeholder="For Ex. Apparels"
         />
-        <button onClick={onSubmit} className="btn btn-outline-info">
+        <button onClick={onSubmit} className="btn btn-warning">
           Create Category
         </button>
       </div>
@@ -83,7 +83,7 @@ const AddCategory = () => {
       description="Add a new category"
       className="container bg-info p-4"
     >
-      <div className="row bg-white rounded">
+      <div className="row rounded">
         <div className="col-md-8 offset-md-2">
           {successMessage()}
           {warningMessage()}
