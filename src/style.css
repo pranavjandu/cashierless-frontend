@@ -10,6 +10,7 @@
 
 html {
   overflow-x: hidden;
+  font-size: 1rem;
 }
 
 .download-btn-first {
@@ -808,6 +809,14 @@ html {
     font-weight: 300;
     font-size: 45px;
     letter-spacing: 2px;
+  }
+
+  .main-navbar-nav .navbar-brand {
+    font-size: 25px;
+    letter-spacing: 4px;
+    position: relative;
+    top: -5px;
+    font-weight: 500;
   }
 
   #cashierless-hero-wrapper {

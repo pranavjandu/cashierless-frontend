@@ -59,9 +59,9 @@ const Footer = () => {
 
         <span className="border-bottom-footer"></span>
 
-        <p className="copyright text-white">
+        <div className="copyright text-white">
           &copy; 2021 Cashierless. All rights reserved.
-        </p>
+        </div>
       </div>
     </footer>
   );

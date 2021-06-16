@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import qrcode from "../img/qrcode.webp";
 import QrReader from "react-qr-reader";
+import { Redirect } from "react-router-dom";
+import { addItemToCart } from "../core/helper/CartHelper";
+import { getProduct } from "../core/helper/coreapicalls";
 
 const UserDashboard = () => {
   const [result, setResult] = useState({
     result: "",
     opencam: false,
   });
+
+  const [redirect, setRedirect] = useState(false);
 
   const changeDiv = () => {
     setResult({ ...result, opencam: true });
@@ -45,10 +50,28 @@ const UserDashboard = () => {
     }
   };
 
+  const addToCart = (data) => {
+    getProduct(data)
+      .then((product) => {
+        console.log(product);
+        addItemToCart(product, () => setRedirect(true));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const getARedirect = () => {
+    if (redirect) {
+      return <Redirect to="/cart" />;
+    }
+  };
+
   const handleScan = (data) => {
-    console.log(data);
     if (data) {
       setResult({ ...result, result: data });
+      console.log(data);
+      addToCart(data);
     }
   };
   const handleError = (err) => {
@@ -57,7 +80,10 @@ const UserDashboard = () => {
 
   return (
     <Base title="" description="Click to scan the product.">
-      <div className="row">{openQR()}</div>
+      <div className="row">
+        {getARedirect()}
+        {openQR()}
+      </div>
     </Base>
   );
 };

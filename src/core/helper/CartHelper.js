@@ -1,14 +1,34 @@
 /* eslint-disable array-callback-return */
+
 export const addItemToCart = (item, next) => {
   let cart = [];
   if (typeof window !== undefined) {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
-    cart.push({
-      ...item,
-      count: 1,
-    });
+    let isPresent = false;
+    if (cart.length > 0) {
+      for (let x = 0; x < cart.length; x++) {
+        if (cart[x]._id === item._id) {
+          isPresent = true;
+          break;
+        }
+      }
+    }
+    if (isPresent) {
+      for (let x = 0; x < cart.length; x++) {
+        if (cart[x]._id === item._id) {
+          cart[x].count = cart[x].count + 1;
+          break;
+        }
+      }
+    } else {
+      cart.push({
+        ...item,
+        count: 1,
+      });
+    }
+
     localStorage.setItem("cart", JSON.stringify(cart));
     next();
   }
