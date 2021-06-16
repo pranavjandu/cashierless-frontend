@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../styles.css";
 import Base from "./Base";
 import Card from "./Card";
 import { loadCart } from "./helper/CartHelper";
+import StripeCheckout from "./StripeCheckout";
 
 const Cart = () => {
   const [products, setProducts] = useState([]);
@@ -37,6 +37,9 @@ const Cart = () => {
           ) : (
             <h4>No products</h4>
           )}
+        </div>
+        <div className="col-4">
+          {<StripeCheckout products={products} setReload={setReload} />}
         </div>
       </div>
     </Base>

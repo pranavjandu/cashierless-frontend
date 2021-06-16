@@ -1,30 +1,26 @@
 import React from "react";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Base = ({
   title = "Title",
   description = "Description",
-  classname = "p-4",
+  classname = "p-4 text-center text-white",
   children,
 }) => {
   return (
     <div>
-      <Navbar></Navbar>
-      <div className="container-fluid">
-        <div className="jumbotron text-center">
-          <h2 className="display-4">{title}</h2>
-          <p className="lead">{description}</p>
+      <div className="container-fluid p-0">
+        <div id="cashierless-hero-wrapper">
+          <Navbar></Navbar>
+          <div className={classname}>
+            <h2>{title}</h2>
+            <h4>{description}</h4>
+          </div>
+          <div className={classname}>{children}</div>
         </div>
-        <div className={classname}>{children}</div>
       </div>
-      <footer className="footer mt-auto py-3">
-        <div className="container-fluid bg-success text-center">
-          <h4>This is the footer</h4>
-        </div>
-        <div className="container">
-          <span className="text-muted">Cashierless shopping</span>
-        </div>
-      </footer>
+      <Footer></Footer>
     </div>
   );
 };

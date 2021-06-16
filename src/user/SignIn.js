@@ -121,7 +121,7 @@ const SignIn = () => {
   };
 
   return (
-    <Base title="signin">
+    <Base title="Sign-in" description="">
       {signInForm()}
       {performRedirect()}
     </Base>

@@ -7,11 +7,12 @@ const SignUp = () => {
     name: "",
     email: "",
     password: "",
+    confirmpassword: "",
     error: "",
     success: false,
   });
 
-  const { name, email, password, error, success } = values;
+  const { name, email, password, error, success, confirmpassword } = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -20,22 +21,27 @@ const SignUp = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     setValues({ ...values, error: false });
-    signup({ firstname: name, email, password })
-      .then((data) => {
-        if (data.error) {
-          setValues({ ...values, error: data.error, success: false });
-        } else {
-          setValues({
-            ...values,
-            name: "",
-            email: "",
-            password: "",
-            error: "",
-            success: true,
-          });
-        }
-      })
-      .catch((err) => console.log(err));
+    if (password !== confirmpassword) {
+      setValues({ ...values, error: "Passwords do not match" });
+    } else {
+      signup({ firstname: name, email, password })
+        .then((data) => {
+          if (data.error) {
+            setValues({ ...values, error: data.error, success: false });
+          } else {
+            setValues({
+              ...values,
+              name: "",
+              email: "",
+              password: "",
+              error: "",
+              confirmpassword: "",
+              success: true,
+            });
+          }
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   const successMessage = () => {
@@ -104,6 +110,19 @@ const SignUp = () => {
                 value={password}
               />
             </div>
+            <div className="form-group">
+              <label htmlFor="confirm-password" className="form-label">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                autoComplete="off"
+                id="confirm-password"
+                onChange={handleChange("confirmpassword")}
+                value={confirmpassword}
+              />
+            </div>
             <div className="form-group mt-5">
               <button className="btn btn-success" onClick={onSubmit}>
                 Sign Up
@@ -116,7 +135,11 @@ const SignUp = () => {
     );
   };
 
-  return <Base title="signup">{signUpForm()}</Base>;
+  return (
+    <Base title="Sign-up" description="">
+      {signUpForm()}
+    </Base>
+  );
 };
 
 export default SignUp;
