@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import ImageHelper from "./helper/ImageHelper";
 import { Redirect } from "react-router-dom";

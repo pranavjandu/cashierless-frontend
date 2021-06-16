@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 export const addItemToCart = (item, next) => {
   let cart = [];
   if (typeof window !== undefined) {

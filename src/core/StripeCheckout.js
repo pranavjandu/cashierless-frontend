@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth/Index";
 import { Link } from "react-router-dom";
