@@ -56,9 +56,13 @@ const Cart = () => {
             <h4>No products</h4>
           )}
         </div>
-        <div className="col-md-4 col-sm-12 col-xs-12 mt-5">
-          {<StripeCheckout products={products} setReload={setReload} />}
-        </div>
+        {products.length > 0 ? (
+          <div className="col-md-4 col-sm-12 col-xs-12 mt-5">
+            {<StripeCheckout products={products} setReload={setReload} />}
+          </div>
+        ) : (
+          <p></p>
+        )}
       </div>
     </Base>
   );
