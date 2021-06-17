@@ -53,7 +53,6 @@ const UserDashboard = () => {
   const addToCart = (data) => {
     getProduct(data)
       .then((product) => {
-        console.log(product);
         addItemToCart(product, () => setRedirect(true));
       })
       .catch((err) => {
@@ -70,7 +69,6 @@ const UserDashboard = () => {
   const handleScan = (data) => {
     if (data) {
       setResult({ ...result, result: data });
-      console.log(data);
       addToCart(data);
     }
   };
