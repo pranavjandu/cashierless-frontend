@@ -56,8 +56,9 @@ const StripeCheckoutC = ({
           };
           createOrder(userId, jwttoken, orderData)
             .then((resp) => {
+              const url = "/order/" + resp._id;
               cartEmpty(() => {
-                <Redirect to="/order"></Redirect>;
+                <Redirect to={url}></Redirect>;
               });
               setReload(!reload);
             })

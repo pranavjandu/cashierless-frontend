@@ -16,6 +16,7 @@ import UpdateProduct from "./admin/UpdateProduct";
 import GuardDashboard from "./user/GuardDashboard";
 import Cart from "./core/Cart";
 import OrderPlaced from "./user/OrderPlaced";
+import GuardReview from "./guard/GuardReview";
 
 const Routes = () => {
   return (
@@ -53,6 +54,11 @@ const Routes = () => {
           component={UpdateProduct}
         />
         <GuardRoute path="/guard/dashboard" exact component={GuardDashboard} />
+        <GuardRoute
+          path="/guard/review/:orderId"
+          exact
+          component={GuardReview}
+        />
 
         <Route component={NotFound}></Route>
       </Switch>
