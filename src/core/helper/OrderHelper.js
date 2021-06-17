@@ -1,7 +1,7 @@
 import { API } from "../../backend";
 
 export const createOrder = (userId, token, orderData) => {
-  return fetch(`${API}/order/create/${userId}`, {
+  return fetch(`${API}order/create/${userId}`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -10,8 +10,8 @@ export const createOrder = (userId, token, orderData) => {
     },
     body: JSON.stringify({ order: orderData }),
   })
-    .then((reponse) => {
-      return reponse.json();
+    .then((response) => {
+      return response.json();
     })
     .catch((err) => console.log(err));
 };

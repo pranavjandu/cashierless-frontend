@@ -47,7 +47,7 @@ const SignIn = () => {
         return <Redirect to="/user/dashboard" />;
       }
       if (user && user.role === 1) {
-        return <p>Guard</p>;
+        return <Redirect to="/guard/dashboard" />;
       }
       if (user && user.role === 2) {
         return <Redirect to="/manager/dashboard" />;
