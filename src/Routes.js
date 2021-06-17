@@ -6,13 +6,14 @@ import SignIn from "./user/SignIn";
 import SignUp from "./user/SignUp";
 import ManagerRoute from "./auth/ManagerRoutes";
 import PrivateRoute from "./auth/PrivateRoutes";
-//import GuardRoute from "./auth/GuardRoutes";
+import GuardRoute from "./auth/GuardRoutes";
 import AddCategory from "./admin/AddCategory";
 import AddProduct from "./admin/AddProduct";
 import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
 import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
+import GuardDashboard from "./user/GuardDashboard";
 import Cart from "./core/Cart";
 
 const Routes = () => {
@@ -49,6 +50,7 @@ const Routes = () => {
           exact
           component={UpdateProduct}
         />
+        <GuardRoute path="/guard/dashboard" exact component={GuardDashboard} />
 
         <Route component={NotFound}></Route>
       </Switch>
