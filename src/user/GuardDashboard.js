@@ -32,7 +32,6 @@ const GuardDashboard = () => {
               margin: "0 auto",
             }}
           />
-          <p>{JSON.stringify(result)}</p>
         </div>
       );
     } else {
@@ -51,14 +50,15 @@ const GuardDashboard = () => {
 
   const getARedirect = () => {
     if (redirect) {
-      return <Redirect to="/cart" />;
+      const url = "/guard/review/" + result.result;
+      return <Redirect to={url} />;
     }
   };
 
   const handleScan = (data) => {
     if (data) {
       setResult({ ...result, result: data });
-      console.log(data);
+      setRedirect(true);
     }
   };
   const handleError = (err) => {

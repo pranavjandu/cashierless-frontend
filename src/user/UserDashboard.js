@@ -33,7 +33,6 @@ const UserDashboard = () => {
               margin: "0 auto",
             }}
           />
-          <p>{JSON.stringify(result)}</p>
         </div>
       );
     } else {

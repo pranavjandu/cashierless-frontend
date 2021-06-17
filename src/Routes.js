@@ -9,6 +9,7 @@ import PrivateRoute from "./auth/PrivateRoutes";
 import GuardRoute from "./auth/GuardRoutes";
 import AddCategory from "./admin/AddCategory";
 import AddProduct from "./admin/AddProduct";
+import ProductQR from "./admin/ProductQR";
 import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
 import ManageProducts from "./admin/ManageProducts";
@@ -16,6 +17,7 @@ import UpdateProduct from "./admin/UpdateProduct";
 import GuardDashboard from "./user/GuardDashboard";
 import Cart from "./core/Cart";
 import OrderPlaced from "./user/OrderPlaced";
+import GuardReview from "./guard/GuardReview";
 
 const Routes = () => {
   return (
@@ -43,6 +45,11 @@ const Routes = () => {
           component={AddProduct}
         />
         <ManagerRoute
+          path="/manager/qr/:productId"
+          exact
+          component={ProductQR}
+        />
+        <ManagerRoute
           path="/manager/products"
           exact
           component={ManageProducts}
@@ -53,6 +60,11 @@ const Routes = () => {
           component={UpdateProduct}
         />
         <GuardRoute path="/guard/dashboard" exact component={GuardDashboard} />
+        <GuardRoute
+          path="/guard/review/:orderId"
+          exact
+          component={GuardReview}
+        />
 
         <Route component={NotFound}></Route>
       </Switch>
