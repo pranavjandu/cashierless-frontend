@@ -21,6 +21,8 @@ const StripeCheckoutC = ({
     address: "",
   });
 
+  const [redirect, setRedirect] = useState(false);
+
   const jwttoken = isAuthenticated() && isAuthenticated().token;
   const userId = isAuthenticated() && isAuthenticated().user._id;
 
@@ -57,9 +59,8 @@ const StripeCheckoutC = ({
           createOrder(userId, jwttoken, orderData)
             .then((resp) => {
               const url = "/order/" + resp._id;
-              cartEmpty(() => {
-                <Redirect to={url}></Redirect>;
-              });
+              setRedirect(url);
+              cartEmpty(() => {});
               setReload(!reload);
             })
             .catch((err) => console.log(err));
@@ -71,6 +72,12 @@ const StripeCheckoutC = ({
         console.log(err);
         setData({ ...data, error: "Payment Failed" });
       });
+  };
+
+  const getARedirect = () => {
+    if (redirect) {
+      return <Redirect to={redirect} />;
+    }
   };
 
   const errorMessage = () => {
@@ -88,6 +95,7 @@ const StripeCheckoutC = ({
     <div>
       <div>
         {errorMessage()}
+        {getARedirect()}
         <p>
           <strong>Final Amount : {getFinalAmount(products)}</strong>
         </p>
