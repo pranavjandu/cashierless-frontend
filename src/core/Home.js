@@ -9,10 +9,11 @@ import icon1 from "../img/icon-1.png";
 import icon2 from "../img/icon-2.png";
 import icon3 from "../img/icon-3.png";
 import smartphone2 from "../img/smartphone-2.png";
-import iphone from "../img/iphone.png";
 import appstore from "../img/app-store-icon.png";
 import playstore from "../img/google-play-icon.png";
 import smartphone1 from "../img/smartphone-1.png";
+import smartphone3 from "../img/smartphone-3.png";
+import smartphone4 from "../img/smartphone-4.png";
 
 export default function Home() {
   return (
@@ -99,16 +100,16 @@ export default function Home() {
         <div className="container cashierless-slider-inner">
           <div className="owl-carousel owl-theme">
             <div className="item">
-              <img src={smartphone2} alt="" />
+              <img src={smartphone1} alt="" />
             </div>
             <div className="item">
               <img src={smartphone2} alt="" />
             </div>
             <div className="item">
-              <img src={iphone} alt="" />
+              <img src={smartphone3} alt="" />
             </div>
             <div className="item">
-              <img src={smartphone2} alt="" />
+              <img src={smartphone4} alt="" />
             </div>
           </div>
         </div>
@@ -132,7 +133,6 @@ export default function Home() {
                   alt="smartphone-1"
                 />
                 <span className="span-new">NEW</span>
-                <span className="span-free">Free</span>
               </div>
             </div>
 
@@ -140,32 +140,24 @@ export default function Home() {
               className="col-sm-6 in-order-2 sm-6-content wow animated fadeInRight"
               data-wow-delay="0.22s"
             >
-              <h1>New Features</h1>
+              <h1>NEW FEATURES</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam dolor iste beatae ad adipisci, fugiat dignissimos
-                pariatur, dolore nemo suscipit cum nisi earum voluptates nulla!
+                This application is now a single page application built using
+                React.js for even faster checkouts.
+                <br />
+                Multi user authentication for Customer, Guard and Manager from a
+                single login page, and much more.
               </p>
-              <span className="circle circle-first">
-                <i className="fab fa-instagram"></i>
-              </span>
-              <span className="circle circle-middle">
-                <i className="fab fa-facebook"></i>
-              </span>
-              <span className="circle circle-last">
-                <i className="fab fa-twitter"></i>
-              </span>
             </div>
 
             <div
               className="col-sm-6 in-order-3 sm-6-content wow animated fadeInLeft"
               data-wow-delay="0.22s"
             >
-              <h1>REAL-TIME STATISTICS</h1>
+              <h1>UI FOR EVERYONE</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam dolor iste beatae ad adipisci, fugiat dignissimos
-                pariatur, dolore nemo suscipit cum nisi earum voluptates nulla!
+                Very easy to use web application UI so everyone can use it
+                without any setup or download.
               </p>
               <span className="circle circle-first">
                 <i className="fas fa-star"></i>
@@ -196,30 +188,23 @@ export default function Home() {
               <div className="col-sm-image-container">
                 <img
                   className="img-float-left"
-                  src={smartphone1}
+                  src={smartphone3}
                   alt="smartphone-3"
                 />
-                <span className="span-data">DATA</span>
-                <span className="span-percent">100%</span>
+                <span className="span-new">NEW</span>
+                <span className="span-percent">SECURE</span>
               </div>
             </div>
             <div
               className="col-sm-6 in-order-6 sm-6-content wow animated fadeInRight"
               data-wow-delay="0.22s"
             >
-              <h1>POWERFUL BACKEND</h1>
+              <h1>PAYMENT GATEWAY INTEGRATED</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam dolor iste beatae ad adipisci, fugiat dignissimos
-                pariatur, dolore nemo suscipit cum nisi earum voluptates nulla!
+                Now you can checkout even faster with integrated STRIPE payment
+                gateway. It is secure and served over HTTPS.
               </p>
-              <span className="circle circle-first">95%</span>
-              <span className="circle circle-middle">
-                <i className="fas fa-forward"></i>
-              </span>
-              <span className="circle circle-last">
-                <i className="fab fa-github"></i>
-              </span>
+              <span className="circle circle-first">100%</span>
             </div>
           </div>
         </div>
