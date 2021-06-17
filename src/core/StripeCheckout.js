@@ -7,6 +7,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { API, STRIPE_KEY } from "../backend";
 import { createOrder } from "./helper/OrderHelper";
 import { cartEmpty } from "./helper/CartHelper";
+import { Redirect } from "react-router-dom";
 
 const StripeCheckoutC = ({
   products,
@@ -55,7 +56,9 @@ const StripeCheckoutC = ({
           };
           createOrder(userId, jwttoken, orderData)
             .then((resp) => {
-              cartEmpty(() => {});
+              cartEmpty(() => {
+                <Redirect to="/order"></Redirect>;
+              });
               setReload(!reload);
             })
             .catch((err) => console.log(err));
