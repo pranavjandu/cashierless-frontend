@@ -7,6 +7,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { API, STRIPE_KEY } from "../backend";
 import { createOrder } from "./helper/OrderHelper";
 import { cartEmpty } from "./helper/CartHelper";
+import { Redirect } from "react-router-dom";
 
 const StripeCheckoutC = ({
   products,
@@ -54,8 +55,10 @@ const StripeCheckoutC = ({
             amount: response.body.amount / 100,
           };
           createOrder(userId, jwttoken, orderData)
-            .then((response) => {
-              cartEmpty(() => {});
+            .then((resp) => {
+              cartEmpty(() => {
+                <Redirect to="/order"></Redirect>;
+              });
               setReload(!reload);
             })
             .catch((err) => console.log(err));
@@ -63,7 +66,10 @@ const StripeCheckoutC = ({
           setData({ ...data, error: "Payment Failed" });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setData({ ...data, error: "Payment Failed" });
+      });
   };
 
   const errorMessage = () => {
@@ -79,21 +85,23 @@ const StripeCheckoutC = ({
 
   return (
     <div>
-      {errorMessage()}
-      <p>
-        <strong>Final Amount : {getFinalAmount(products)}</strong>
-      </p>
-      <StripeCheckout
-        stripeKey={STRIPE_KEY}
-        token={makePayment}
-        amount={getFinalAmount(products) * 100}
-        currency="INR"
-        name="Cashierless bill"
-        shippingAddress
-        billingAddress
-      >
-        <button className="btn btn-success">Pay with Stripe</button>
-      </StripeCheckout>
+      <div>
+        {errorMessage()}
+        <p>
+          <strong>Final Amount : {getFinalAmount(products)}</strong>
+        </p>
+        <StripeCheckout
+          stripeKey={STRIPE_KEY}
+          token={makePayment}
+          amount={getFinalAmount(products) * 100}
+          currency="INR"
+          name="Cashierless bill"
+          shippingAddress
+          billingAddress
+        >
+          <button className="btn btn-success">Pay with Stripe</button>
+        </StripeCheckout>
+      </div>
     </div>
   );
 };
