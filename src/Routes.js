@@ -9,6 +9,7 @@ import PrivateRoute from "./auth/PrivateRoutes";
 import GuardRoute from "./auth/GuardRoutes";
 import AddCategory from "./admin/AddCategory";
 import AddProduct from "./admin/AddProduct";
+import ProductQR from "./admin/ProductQR";
 import UserDashboard from "./user/UserDashboard";
 import ManagerDashboard from "./user/ManagerDashboard";
 import ManageProducts from "./admin/ManageProducts";
@@ -42,6 +43,11 @@ const Routes = () => {
           path="/manager/create/product"
           exact
           component={AddProduct}
+        />
+        <ManagerRoute
+          path="/manager/qr/:productId"
+          exact
+          component={ProductQR}
         />
         <ManagerRoute
           path="/manager/products"

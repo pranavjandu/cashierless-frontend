@@ -5,9 +5,11 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { getCategories, createaProduct } from "./helper/adminapicalls";
 import { isAuthenticated } from "../auth/Index";
+import { Redirect } from "react-router-dom";
 
 const AddProduct = () => {
   const { user, token } = isAuthenticated();
+  const [redirect, setRedirect] = useState("");
 
   const [values, setValues] = useState({
     name: "",
@@ -70,8 +72,16 @@ const AddProduct = () => {
           loading: false,
           createdProduct: data.name,
         });
+        setRedirect(data._id);
       }
     });
+  };
+
+  const getARedirect = () => {
+    if (redirect) {
+      const url = "/manager/qr/" + redirect;
+      return <Redirect to={url} />;
+    }
   };
 
   const handleChange = (name) => (event) => {
@@ -184,6 +194,7 @@ const AddProduct = () => {
       </Link>
       <div className="row rounded">
         <div className="col-md-8 offset-md-2">
+          {getARedirect()}
           {successMessage()}
           {warningMessage()}
           {createProductForm()}
