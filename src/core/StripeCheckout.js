@@ -54,7 +54,7 @@ const StripeCheckoutC = ({
             amount: response.body.amount / 100,
           };
           createOrder(userId, jwttoken, orderData)
-            .then((response) => {
+            .then((resp) => {
               cartEmpty(() => {});
               setReload(!reload);
             })
@@ -63,7 +63,10 @@ const StripeCheckoutC = ({
           setData({ ...data, error: "Payment Failed" });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setData({ ...data, error: "Payment Failed" });
+      });
   };
 
   const errorMessage = () => {
@@ -79,21 +82,23 @@ const StripeCheckoutC = ({
 
   return (
     <div>
-      {errorMessage()}
-      <p>
-        <strong>Final Amount : {getFinalAmount(products)}</strong>
-      </p>
-      <StripeCheckout
-        stripeKey={STRIPE_KEY}
-        token={makePayment}
-        amount={getFinalAmount(products) * 100}
-        currency="INR"
-        name="Cashierless bill"
-        shippingAddress
-        billingAddress
-      >
-        <button className="btn btn-success">Pay with Stripe</button>
-      </StripeCheckout>
+      <div>
+        {errorMessage()}
+        <p>
+          <strong>Final Amount : {getFinalAmount(products)}</strong>
+        </p>
+        <StripeCheckout
+          stripeKey={STRIPE_KEY}
+          token={makePayment}
+          amount={getFinalAmount(products) * 100}
+          currency="INR"
+          name="Cashierless bill"
+          shippingAddress
+          billingAddress
+        >
+          <button className="btn btn-success">Pay with Stripe</button>
+        </StripeCheckout>
+      </div>
     </div>
   );
 };
