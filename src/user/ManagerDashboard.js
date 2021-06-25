@@ -65,8 +65,8 @@ const ManagerDashboard = () => {
       className="container bg-success p-4"
     >
       <div className="row">
-        <div className="col-3">{adminLeftSide()}</div>
-        <div className="col-9">{adminRightSide()}</div>
+        <div className="col-lg-3 col-md-12 col-xs-12">{adminLeftSide()}</div>
+        <div className="col-lg-9 col-md-12 col-xs-12">{adminRightSide()}</div>
       </div>
     </Base>
   );

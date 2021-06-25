@@ -47,6 +47,17 @@ const Navbar = ({ history }) => {
               </Link>
             </li>
           )}
+          {isAuthenticated() && isAuthenticated().user.role === 0 && (
+            <li className="nav-item">
+              <Link
+                style={currentTab(history, "/videocall")}
+                to="/videocall"
+                className="nav-link"
+              >
+                Video Call
+              </Link>
+            </li>
+          )}
           {isAuthenticated() && isAuthenticated().user.role === 1 && (
             <li className="nav-item">
               <Link

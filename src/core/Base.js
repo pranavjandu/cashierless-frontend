@@ -6,6 +6,7 @@ const Base = ({
   title = "Title",
   description = "Description",
   classname = "p-4 text-center text-white",
+  titleClass = "p-4 text-center text-white",
   children,
 }) => {
   return (
@@ -13,7 +14,7 @@ const Base = ({
       <div className="container-fluid p-0">
         <div id="cashierless-hero-wrapper">
           <Navbar></Navbar>
-          <div className={classname}>
+          <div className={titleClass}>
             <h2>{title}</h2>
             <h4>{description}</h4>
           </div>

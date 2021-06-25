@@ -9,10 +9,11 @@ import icon1 from "../img/icon-1.png";
 import icon2 from "../img/icon-2.png";
 import icon3 from "../img/icon-3.png";
 import smartphone2 from "../img/smartphone-2.png";
-import iphone from "../img/iphone.png";
 import appstore from "../img/app-store-icon.png";
 import playstore from "../img/google-play-icon.png";
 import smartphone1 from "../img/smartphone-1.png";
+import smartphone3 from "../img/smartphone-3.png";
+import smartphone4 from "../img/smartphone-4.png";
 
 export default function Home() {
   return (
@@ -25,10 +26,9 @@ export default function Home() {
             A Self-Checkout App for Faster Checkouts
           </h1>
           <p className="animated fadeIn wow" data-wow-delay="0.67s">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque
-            laudantium fugiat vero hic excepturi exercitationem veritatis
-            obcaecati odio placeat architecto sit atque quaerat dignissimos eos
-            asperiores, officia necessitatibus reprehenderit quia?
+            Cashier-less Shopping means you will never have to wait in line at
+            the checkout again. Simply scan and pay for your items using your
+            phone and you are free to leave the store.
           </p>
           <Link
             className="btn btn-md download-btn-first wow fadeInLeft animated"
@@ -56,8 +56,8 @@ export default function Home() {
       <div className="cashierless-advantages-outer">
         <div className="container">
           <h1 className="second-title">
-            <span className="span-perfect">Main</span>
-            <span className="span-features">Features</span>
+            <span className="span-perfect">Easy</span>
+            <span className="span-features">Steps</span>
           </h1>
 
           <div
@@ -66,28 +66,25 @@ export default function Home() {
           >
             <div className="col-sm-4">
               <img className="grid-image" src={icon1} alt="Icon-1" />
-              <h1 className="grid-title">Usability</h1>
+              <h1 className="grid-title">Get in</h1>
               <p className="grid-desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                cupiditate.
+                Enter the store and login to cashierless to start.
               </p>
             </div>
 
             <div className="col-sm-4">
               <img className="grid-image" src={icon2} alt="Icon-2" />
-              <h1 className="grid-title">Parallax Effect</h1>
+              <h1 className="grid-title">Scan!</h1>
               <p className="grid-desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                cupiditate.
+                Scan your product's QR code to add into cart.
               </p>
             </div>
 
             <div className="col-sm-4">
               <img className="grid-image" src={icon3} alt="Icon-3" />
-              <h1 className="grid-title">Unlimited Colors</h1>
+              <h1 className="grid-title">Get out</h1>
               <p className="grid-desc">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem
-                cupiditate.
+                Pay cashless and show the QR to guard.
               </p>
             </div>
           </div>
@@ -98,21 +95,21 @@ export default function Home() {
         className="cashierless-slider-outer wow fadeIn"
         data-wow-delay="0.36s"
       >
-        <h1>SIMPLE WIDGETS</h1>
-        <small>Drag and Drop</small>
+        <h1>SIMPLE UI</h1>
+        <small>Easy and Fast</small>
         <div className="container cashierless-slider-inner">
           <div className="owl-carousel owl-theme">
             <div className="item">
-              <img src={smartphone2} alt="" />
+              <img src={smartphone1} alt="" />
             </div>
             <div className="item">
               <img src={smartphone2} alt="" />
             </div>
             <div className="item">
-              <img src={iphone} alt="" />
+              <img src={smartphone3} alt="" />
             </div>
             <div className="item">
-              <img src={smartphone2} alt="" />
+              <img src={smartphone4} alt="" />
             </div>
           </div>
         </div>
@@ -136,7 +133,6 @@ export default function Home() {
                   alt="smartphone-1"
                 />
                 <span className="span-new">NEW</span>
-                <span className="span-free">Free</span>
               </div>
             </div>
 
@@ -144,32 +140,24 @@ export default function Home() {
               className="col-sm-6 in-order-2 sm-6-content wow animated fadeInRight"
               data-wow-delay="0.22s"
             >
-              <h1>New Features</h1>
+              <h1>NEW FEATURES</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam dolor iste beatae ad adipisci, fugiat dignissimos
-                pariatur, dolore nemo suscipit cum nisi earum voluptates nulla!
+                This application is now a single page application built using
+                React.js for even faster checkouts.
+                <br />
+                Multi user authentication for Customer, Guard and Manager from a
+                single login page, and much more.
               </p>
-              <span className="circle circle-first">
-                <i className="fab fa-instagram"></i>
-              </span>
-              <span className="circle circle-middle">
-                <i className="fab fa-facebook"></i>
-              </span>
-              <span className="circle circle-last">
-                <i className="fab fa-twitter"></i>
-              </span>
             </div>
 
             <div
               className="col-sm-6 in-order-3 sm-6-content wow animated fadeInLeft"
               data-wow-delay="0.22s"
             >
-              <h1>REAL-TIME STATISTICS</h1>
+              <h1>UI FOR EVERYONE</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam dolor iste beatae ad adipisci, fugiat dignissimos
-                pariatur, dolore nemo suscipit cum nisi earum voluptates nulla!
+                Very easy to use web application UI so everyone can use it
+                without any setup or download.
               </p>
               <span className="circle circle-first">
                 <i className="fas fa-star"></i>
@@ -200,30 +188,23 @@ export default function Home() {
               <div className="col-sm-image-container">
                 <img
                   className="img-float-left"
-                  src={smartphone1}
+                  src={smartphone3}
                   alt="smartphone-3"
                 />
-                <span className="span-data">DATA</span>
-                <span className="span-percent">100%</span>
+                <span className="span-new">NEW</span>
+                <span className="span-percent">SECURE</span>
               </div>
             </div>
             <div
               className="col-sm-6 in-order-6 sm-6-content wow animated fadeInRight"
               data-wow-delay="0.22s"
             >
-              <h1>POWERFUL BACKEND</h1>
+              <h1>PAYMENT GATEWAY INTEGRATED</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Aliquam dolor iste beatae ad adipisci, fugiat dignissimos
-                pariatur, dolore nemo suscipit cum nisi earum voluptates nulla!
+                Now you can checkout even faster with integrated STRIPE payment
+                gateway. It is secure and served over HTTPS.
               </p>
-              <span className="circle circle-first">95%</span>
-              <span className="circle circle-middle">
-                <i className="fas fa-forward"></i>
-              </span>
-              <span className="circle circle-last">
-                <i className="fab fa-github"></i>
-              </span>
+              <span className="circle circle-first">100%</span>
             </div>
           </div>
         </div>
