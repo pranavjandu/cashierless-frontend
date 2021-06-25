@@ -18,6 +18,7 @@ import GuardDashboard from "./user/GuardDashboard";
 import Cart from "./core/Cart";
 import OrderPlaced from "./user/OrderPlaced";
 import GuardReview from "./guard/GuardReview";
+import VideoCall from "./VideoCall";
 
 const Routes = () => {
   return (
@@ -29,6 +30,7 @@ const Routes = () => {
         <PrivateRoute path="/user/dashboard" exact component={UserDashboard} />
         <PrivateRoute path="/cart" exact component={Cart} />
         <PrivateRoute path="/order/:orderId" exact component={OrderPlaced} />
+        <PrivateRoute path="/videocall" exact component={VideoCall} />
         <ManagerRoute
           path="/manager/dashboard"
           exact
