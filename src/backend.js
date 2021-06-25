@@ -3,3 +3,4 @@
 export const API =
   process.env.REACT_APP_BACKEND || "http://localhost:8000/api/";
 export const STRIPE_KEY = process.env.REACT_APP_STRIPE_KEY || "";
+export const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE || "";
