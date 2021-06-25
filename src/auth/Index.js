@@ -35,6 +35,25 @@ export const signin = (user) => {
     });
 };
 
+export const googleSignin = (email) => {
+  return fetch(`${API}auth/google`, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: email,
+    }),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 // Setting the token in cookie storage
 export const authenticate = (data, next) => {
   if (typeof window !== undefined) {

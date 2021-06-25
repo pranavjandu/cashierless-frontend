@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Base from "../core/Base";
 import { Redirect } from "react-router-dom";
-import { signin, authenticate, isAuthenticated } from "../auth/Index";
+import {
+  signin,
+  authenticate,
+  isAuthenticated,
+  googleSignin,
+} from "../auth/Index";
+import { GoogleLogin } from "react-google-login";
+import { GOOGLE_CLIENT_ID } from "../backend";
 
 const SignIn = () => {
   const [values, setValues] = useState({
@@ -76,6 +83,30 @@ const SignIn = () => {
       </div>
     );
   };
+  const handleGoogleLoginError = async (googleData) => {
+    setValues({ ...values, error: "Google login unsuccessful" });
+  };
+
+  const handleGoogleLogin = async (googleData) => {
+    setValues({ ...values, error: false, loading: true });
+    googleSignin(googleData.profileObj.email)
+      .then((data) => {
+        if (data.error) {
+          setValues({ ...values, error: data.error, loading: false });
+        } else {
+          authenticate(data, () => {
+            setValues({
+              ...values,
+              didRedirect: true,
+              email: "",
+              password: "",
+              error: "",
+            });
+          });
+        }
+      })
+      .catch((err) => console.log(err));
+  };
 
   const signInForm = () => {
     return (
@@ -112,6 +143,15 @@ const SignIn = () => {
               <button onClick={onSubmit} className="btn btn-success">
                 Sign In
               </button>
+            </div>
+            <div className="form-group mt-1">
+              <GoogleLogin
+                clientId={GOOGLE_CLIENT_ID}
+                buttonText="Log in with Google"
+                onSuccess={handleGoogleLogin}
+                onFailure={handleGoogleLoginError}
+                cookiePolicy={"single_host_origin"}
+              />
             </div>
           </form>
         </div>
