@@ -84,7 +84,7 @@ const SignIn = () => {
     );
   };
   const handleGoogleLoginError = async (googleData) => {
-    setValues({ ...values, error: "Google login unsuccessful" });
+    setValues({ ...values, error: "" });
   };
 
   const handleGoogleLogin = async (googleData) => {
