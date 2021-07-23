@@ -13,7 +13,6 @@ const VideoPlayer = () => {
           <p className="text-white mb-0">{call.name}</p>
           <video
             playsInline
-            muted
             ref={userVideo}
             autoPlay
             style={{ width: "100%", height: "auto" }}
